@@ -1,2 +1,7 @@
 food-101/
 *.gz
+*.hdf5
+*.bak
+data/
+.ipynb_checkpoints/
+__pycache__
