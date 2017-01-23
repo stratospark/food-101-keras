@@ -62,11 +62,12 @@ Others have been able to achieve more accurate results:
 
 ### Thoughts
 
-* Loading a large amount of data into memory
-* Saving the data into h5py file for out of band processing
+* Loading a large amount of data into memory, how to avoid?
+* Saving the data into h5py file for out of band processing?
 * Using Dask for distributed processing?
-* Using multiprocessing image augmentation
-* 
+* Improving multiprocessing image augmentation?
+* Exporting to [keras-js](https://github.com/transcranial/keras-js)
+* Exporting to Tensorflow [mobile app](https://www.tensorflow.org/mobile/)?
 
 ## Experiment
 
@@ -713,7 +714,7 @@ The end result is that each epoch of training went from 45 minutes to 22 minutes
 
 At the moment, the code is fairly buggy and requires restarting the Python kernel whenever training is manually interrupted. The code is quite hacked together and certain features, like those that involve fitting, are disabled. I hope to improve this ImageDataGenerator and release it to the community in the future.
 
-![](gpu.png)
+![GPU Utilization Graph](gpu.png)
 
 
 ```python
