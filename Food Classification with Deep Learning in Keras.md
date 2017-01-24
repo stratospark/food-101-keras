@@ -4,6 +4,8 @@
 
 ![https://www.flickr.com/photos/torley/3294481634](https://c1.staticflickr.com/4/3360/3294481634_48b2b5baea_b.jpg)
 
+**Code available @ [https://github.com/stratospark/food-101-keras](https://github.com/stratospark/food-101-keras)**
+
 * [Introduction](#Introduction)
     * [Project Description](#Project-Description)
     * [Approach](#Approach)
@@ -158,15 +160,15 @@ display(
 ```
 
 
-![jpeg](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_21_0.jpg)
+![jpeg](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_21_0.jpeg)
 
 
 
-![jpeg](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_21_1.jpg)
+![jpeg](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_21_1.jpeg)
 
 
 
-![jpeg](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_21_2.jpg)
+![jpeg](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_21_2.jpeg)
 
 
 Let's import all of the packages needed for the rest of the notebook:
