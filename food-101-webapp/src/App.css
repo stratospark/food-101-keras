@@ -42,6 +42,13 @@ button {
   -webkit-animation: zoom 1s ease-in-out infinite alternate;
 }
 
+.error {
+  display: inline-block;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: red;
+}
+
 .predictions {
   display: inline-block;
   border: 1px solid gray;

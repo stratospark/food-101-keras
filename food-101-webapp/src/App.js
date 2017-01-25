@@ -43,6 +43,17 @@ class App extends Component {
   constructor() {
     super();
 
+    let hasWebgl = false;
+    const canvas = document.createElement('canvas');
+    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    // Report the result.
+    if (gl && gl instanceof WebGLRenderingContext) {
+      hasWebgl = true;
+    } else {
+      hasWebgl = false;
+    }
+    console.log('WebGL enabled:', hasWebgl);
+
     this.urlInput = null;
     this.state = {
       model: null,
@@ -53,6 +64,7 @@ class App extends Component {
       loadingPercent: 0,
       classifyPercent: 0,
       topK: null,
+      hasWebgl,
       url: 'http://www.rawtillwhenever.com/wp-content/uploads/2015/09/vegan-tempura-sushi-2.png'
     };
   }
@@ -61,11 +73,11 @@ class App extends Component {
     console.log('Loading Model');
     const model = new window.KerasJS.Model({
       filepaths: {
-        model: 'model.json',
+        model: 'model.json' ,
         weights: 'model4b.10-0.68_weights.buf',
         metadata: 'model4b.10-0.68_metadata.json'
       },
-      gpu: true,
+      gpu: this.state.hasWebgl,
       layerCallPauses: true
     });
 
@@ -105,6 +117,7 @@ class App extends Component {
     };
 
     this.setState({
+      imageLoadingError: false,
       imageLoading: true,
       loadingPercent: 0,
       classifyPercent: 0,
@@ -115,11 +128,14 @@ class App extends Component {
       'https://crossorigin.me/' + url,
       img => {
         if (img.type === 'error') {
+          console.log('Error loading image');
           this.setState({
             imageLoadingError: true,
             imageLoading: false,
-            modelRunning: true,
+            modelRunning: false,
+            url: null
           });
+
         } else {
           console.log('Image Loaded');
           const ctx = document.getElementById('input-canvas').getContext('2d');
@@ -222,6 +238,7 @@ class App extends Component {
       modelLoading,
       modelRunning,
       imageLoading,
+      imageLoadingError,
       classifyPercent,
       topK
     } = this.state;
@@ -242,6 +259,9 @@ class App extends Component {
           : ''}
         { modelLoaded && imageLoading ?
           <p className='loading'>LOADING IMAGE</p>
+          : ''}
+        { modelLoaded && imageLoadingError ?
+          <p className='error'>ERROR LOADING IMAGE.<br/>TRY DIFFERENT URL</p>
           : ''}
         { modelLoaded && modelRunning ?
           <p className='loading'>CLASSIFYING: {classifyPercent}%</p>

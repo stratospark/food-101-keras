@@ -6,7 +6,7 @@
 
 
 ```python
-from IPython.display import HTML
+from IPython.display import HTML, Image
 
 url = 'http://stratospark.com/demos/food-101/'
 el = '<' + 'iframe src="{}"'.format(url) + ' width="100%" height=600></iframe>' # prevent notebook render bug
@@ -16,7 +16,21 @@ HTML(el)
 
 
 
-<iframe src="http://stratospark.com/demos/food-101/" width="100%" height=600></iframe>
+![jpeg](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_2_0.jpeg)
+
+
+
+If you are reading this on GitHub, the demo looks like this. Please follow the link below to view the live demo on my blog.
+
+
+```python
+Image('demo.jpg')
+```
+
+
+
+
+![jpeg](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_4_0.jpeg)
 
 
 
@@ -229,7 +243,7 @@ plt.tight_layout(rect=[0, 0.03, 1, 0.95])
 ```
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_25_0.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_27_0.png)
 
 
 A `multiprocessing.Pool` will be used to accelerate image augmentation during training.
@@ -628,7 +642,7 @@ def show_pic(n):
 
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_37_1.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_39_1.png)
 
 
 
@@ -643,7 +657,7 @@ def show_pic(n):
 
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_38_1.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_40_1.png)
 
 
 
@@ -674,7 +688,7 @@ def show_random_images_of_class(n_class=0):
 
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_39_1.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_41_1.png)
 
 
 
@@ -705,7 +719,7 @@ def show_random_images_of_class(n_class=0):
 
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_40_1.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_42_1.png)
 
 
 ### Image Augmentation
@@ -751,7 +765,7 @@ display(Image('./gpu.png'))
 ```
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_46_0.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_48_0.png)
 
 
 
@@ -827,7 +841,7 @@ def show_images(unprocess=True):
 ```
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_51_0.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_53_0.png)
 
 
     CPU times: user 1.54 s, sys: 524 ms, total: 2.06 s
@@ -841,7 +855,7 @@ show_images(unprocess=False)
 ```
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_52_0.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_54_0.png)
 
 
     CPU times: user 1.58 s, sys: 300 ms, total: 1.88 s
@@ -1157,7 +1171,7 @@ predict_10_crop(X_test[ix], ix, top_n=5, plot=True, preprocess=False, debug=True
 
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_64_2.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_66_2.png)
 
 
 We also need to preprocess the images for the Inception model:
@@ -1199,7 +1213,7 @@ predict_10_crop(X_test[ix], ix, top_n=5, plot=True, preprocess=True, debug=True)
 
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_66_2.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_68_2.png)
 
 
 Now we create crops for each item in the test set and get the predictions. This is a slow process at the moment as I am not taking advantage of multiprocessing or other types of parallelism.
@@ -1263,7 +1277,7 @@ plt.title('Number of unique predictions per image')
 
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_70_1.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_72_1.png)
 
 
 Let's create a dictionary to map test item index to its top-1 / top-5 predictions.
@@ -1367,7 +1381,7 @@ def show_images_prediction(page=0):
 ```
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_77_0.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_79_0.png)
 
 
 A confusion matrix will plot each class label and how many times it was correctly labeled vs. the other times it was incorrectly labeled as a different class.
@@ -1438,7 +1452,7 @@ plt.show()
 
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_79_1.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_81_1.png)
 
 
     CPU times: user 16.4 s, sys: 1.22 s, total: 17.6 s
@@ -1473,7 +1487,7 @@ plt.title('Accuracy by Class histogram')
 
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_81_1.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_83_1.png)
 
 
 
@@ -1614,7 +1628,7 @@ plt.imshow(pic)
 
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_85_2.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_87_2.png)
 
 
 Predicting from an image on the Internet
@@ -1637,7 +1651,7 @@ def predict_remote_image(url='http://themodelhouse.tv/wp-content/uploads/2016/08
 
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_87_1.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_89_1.png)
 
 
 ### Keras.js Export
