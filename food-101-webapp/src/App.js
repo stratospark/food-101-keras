@@ -250,7 +250,7 @@ class App extends Component {
         <div className='interactive'>
           { modelLoaded && !modelRunning && !imageLoading ?
           <p>
-            Image URL: <input type='text' ref={(input) => { this.urlInput = input; }}/>
+            Food Image URL: <input type='text' ref={(input) => { this.urlInput = input; }}/>
             <br/><br/>
             <button onClick={this.classifyNewImage}>Classify Image</button>
           </p>
