@@ -4,6 +4,22 @@
 
 ![https://www.flickr.com/photos/torley/3294481634](https://c1.staticflickr.com/4/3360/3294481634_48b2b5baea_b.jpg)
 
+
+```python
+from IPython.display import HTML
+
+url = 'http://stratospark.com/demos/food-101/'
+el = '<' + 'iframe src="{}"'.format(url) + ' width="100%" height=600></iframe>' # prevent notebook render bug
+HTML(el)
+```
+
+
+
+
+<iframe src="http://stratospark.com/demos/food-101/" width="100%" height=600></iframe>
+
+
+
 **Code available @ [https://github.com/stratospark/food-101-keras](https://github.com/stratospark/food-101-keras)**
 
 * [Introduction](#Introduction)
@@ -210,7 +226,7 @@ plt.tight_layout(rect=[0, 0.03, 1, 0.95])
 ```
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_24_0.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_25_0.png)
 
 
 A `multiprocessing.Pool` will be used to accelerate image augmentation during training.
@@ -609,7 +625,7 @@ def show_pic(n):
 
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_36_1.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_37_1.png)
 
 
 
@@ -624,7 +640,7 @@ def show_pic(n):
 
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_37_1.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_38_1.png)
 
 
 
@@ -655,7 +671,7 @@ def show_random_images_of_class(n_class=0):
 
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_38_1.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_39_1.png)
 
 
 
@@ -686,7 +702,7 @@ def show_random_images_of_class(n_class=0):
 
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_39_1.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_40_1.png)
 
 
 ### Image Augmentation
@@ -732,7 +748,7 @@ display(Image('./gpu.png'))
 ```
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_45_0.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_46_0.png)
 
 
 
@@ -808,7 +824,7 @@ def show_images(unprocess=True):
 ```
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_50_0.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_51_0.png)
 
 
     CPU times: user 1.54 s, sys: 524 ms, total: 2.06 s
@@ -822,7 +838,7 @@ show_images(unprocess=False)
 ```
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_51_0.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_52_0.png)
 
 
     CPU times: user 1.58 s, sys: 300 ms, total: 1.88 s
@@ -1138,7 +1154,7 @@ predict_10_crop(X_test[ix], ix, top_n=5, plot=True, preprocess=False, debug=True
 
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_63_2.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_64_2.png)
 
 
 We also need to preprocess the images for the Inception model:
@@ -1180,7 +1196,7 @@ predict_10_crop(X_test[ix], ix, top_n=5, plot=True, preprocess=True, debug=True)
 
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_65_2.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_66_2.png)
 
 
 Now we create crops for each item in the test set and get the predictions. This is a slow process at the moment as I am not taking advantage of multiprocessing or other types of parallelism.
@@ -1244,7 +1260,7 @@ plt.title('Number of unique predictions per image')
 
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_69_1.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_70_1.png)
 
 
 Let's create a dictionary to map test item index to its top-1 / top-5 predictions.
@@ -1348,7 +1364,7 @@ def show_images_prediction(page=0):
 ```
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_76_0.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_77_0.png)
 
 
 A confusion matrix will plot each class label and how many times it was correctly labeled vs. the other times it was incorrectly labeled as a different class.
@@ -1419,7 +1435,7 @@ plt.show()
 
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_78_1.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_79_1.png)
 
 
     CPU times: user 16.4 s, sys: 1.22 s, total: 17.6 s
@@ -1454,7 +1470,7 @@ plt.title('Accuracy by Class histogram')
 
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_80_1.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_81_1.png)
 
 
 
@@ -1595,7 +1611,7 @@ plt.imshow(pic)
 
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_84_2.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_85_2.png)
 
 
 Predicting from an image on the Internet
@@ -1618,5 +1634,27 @@ def predict_remote_image(url='http://themodelhouse.tv/wp-content/uploads/2016/08
 
 
 
-![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_86_1.png)
+![png](Food%20Classification%20with%20Deep%20Learning%20in%20Keras_files/Food%20Classification%20with%20Deep%20Learning%20in%20Keras_87_1.png)
+
+
+### Keras.js Export
+
+
+```python
+with open('model.json', 'w') as f:
+    f.write(model.to_json())
+```
+
+
+```python
+import json
+
+json.dumps(ix_to_class)
+```
+
+
+
+
+    '{"0": "apple_pie", "1": "baby_back_ribs", "2": "baklava", "3": "beef_carpaccio", "4": "beef_tartare", "5": "beet_salad", "6": "beignets", "7": "bibimbap", "8": "bread_pudding", "9": "breakfast_burrito", "10": "bruschetta", "11": "caesar_salad", "12": "cannoli", "13": "caprese_salad", "14": "carrot_cake", "15": "ceviche", "16": "cheesecake", "17": "cheese_plate", "18": "chicken_curry", "19": "chicken_quesadilla", "20": "chicken_wings", "21": "chocolate_cake", "22": "chocolate_mousse", "23": "churros", "24": "clam_chowder", "25": "club_sandwich", "26": "crab_cakes", "27": "creme_brulee", "28": "croque_madame", "29": "cup_cakes", "30": "deviled_eggs", "31": "donuts", "32": "dumplings", "33": "edamame", "34": "eggs_benedict", "35": "escargots", "36": "falafel", "37": "filet_mignon", "38": "fish_and_chips", "39": "foie_gras", "40": "french_fries", "41": "french_onion_soup", "42": "french_toast", "43": "fried_calamari", "44": "fried_rice", "45": "frozen_yogurt", "46": "garlic_bread", "47": "gnocchi", "48": "greek_salad", "49": "grilled_cheese_sandwich", "50": "grilled_salmon", "51": "guacamole", "52": "gyoza", "53": "hamburger", "54": "hot_and_sour_soup", "55": "hot_dog", "56": "huevos_rancheros", "57": "hummus", "58": "ice_cream", "59": "lasagna", "60": "lobster_bisque", "61": "lobster_roll_sandwich", "62": "macaroni_and_cheese", "63": "macarons", "64": "miso_soup", "65": "mussels", "66": "nachos", "67": "omelette", "68": "onion_rings", "69": "oysters", "70": "pad_thai", "71": "paella", "72": "pancakes", "73": "panna_cotta", "74": "peking_duck", "75": "pho", "76": "pizza", "77": "pork_chop", "78": "poutine", "79": "prime_rib", "80": "pulled_pork_sandwich", "81": "ramen", "82": "ravioli", "83": "red_velvet_cake", "84": "risotto", "85": "samosa", "86": "sashimi", "87": "scallops", "88": "seaweed_salad", "89": "shrimp_and_grits", "90": "spaghetti_bolognese", "91": "spaghetti_carbonara", "92": "spring_rolls", "93": "steak", "94": "strawberry_shortcake", "95": "sushi", "96": "tacos", "97": "takoyaki", "98": "tiramisu", "99": "tuna_tartare", "100": "waffles"}'
+
 
