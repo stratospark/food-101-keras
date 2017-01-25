@@ -74,7 +74,7 @@ class App extends Component {
     const model = new window.KerasJS.Model({
       filepaths: {
         model: 'model.json' ,
-        weights: 'model4b.10-0.68_weights.buf',
+        weights: 'https://s3.amazonaws.com/stratospark/food-101/model4b.10-0.68_weights.buf',
         metadata: 'model4b.10-0.68_metadata.json'
       },
       gpu: this.state.hasWebgl,
@@ -83,12 +83,15 @@ class App extends Component {
 
     let interval = setInterval(() => {
       const percent = model.getLoadingProgress();
+      console.log('Progress', percent, model.xhrProgress);
       this.setState({
         loadingPercent: percent
       });
-    }, 50);
+    }, 100);
 
-    model.ready().then(() => {
+    const waitTillReady = model.ready();
+
+    waitTillReady.then(() => {
       clearInterval(interval);
       console.log('Model ready');
       this.setState({
@@ -249,7 +252,7 @@ class App extends Component {
         <p className='intro'>
           To get started, click the Load Model button to download the model that
           we have built and exported using the Python notebook. The file may be
-          fairly large for some (85 MB), so keep that in mind.
+          fairly large for some (85 MB), so keep that in mind if progress seems stuck.
         </p>
         : ''}
         <div className='init'>
