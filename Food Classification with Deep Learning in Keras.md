@@ -20,6 +20,8 @@ HTML(el)
 
 
 
+**Demo available @ [http://blog.stratospark.com/deep-learning-applied-food-classification-deep-learning-keras.html](http://blog.stratospark.com/deep-learning-applied-food-classification-deep-learning-keras.html)**
+
 **Code available @ [https://github.com/stratospark/food-101-keras](https://github.com/stratospark/food-101-keras)**
 
 * [Introduction](#Introduction)
@@ -35,6 +37,7 @@ HTML(el)
     * [Model Evaluation](#Model-Evaluation)
     * [Results Visualization](#Results-Visualization)
     * [Interactive Classification](#Interactive-Classification)
+    * [Keras.js Export](#Keras.js-Export)
 
 ## Introduction
 
