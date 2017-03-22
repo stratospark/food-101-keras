@@ -38,6 +38,12 @@ Image('demo.jpg')
 
 **Code available @ [https://github.com/stratospark/food-101-keras](https://github.com/stratospark/food-101-keras)**
 
+**UPDATES**
+
+* **2017-03-22** Learn how to use this model in a mobile app: http://blog.stratospark.com/creating-a-deep-learning-ios-app-with-keras-and-tensorflow.html
+
+---
+
 * [Introduction](#Introduction)
     * [Project Description](#Project-Description)
     * [Approach](#Approach)
@@ -101,8 +107,11 @@ Others have been able to achieve more accurate results:
 * Saving the data into h5py file for out of band processing?
 * Using Dask for distributed processing?
 * Improving multiprocessing image augmentation?
-* Exporting to [keras-js](https://github.com/transcranial/keras-js)
-* Exporting to Tensorflow [mobile app](https://www.tensorflow.org/mobile/)?
+
+---
+* Exporting to Tensorflow [mobile app](https://www.tensorflow.org/mobile/)? 
+
+**Implemented! Check out: http://blog.stratospark.com/creating-a-deep-learning-ios-app-with-keras-and-tensorflow.html**
 
 ## Experiment
 
